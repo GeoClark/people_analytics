@@ -24,27 +24,33 @@ _**Figure 2:** A boxplot showing the range in z scores for all values in each va
  ### Observations
  A detailed exploration of the dataset was conducted. In that evaluation, the relationship between attrition and age was identified as being a major predictor of attrition.  Other properties such as compensation, stock options, years of experience, years with a given supervisor, and overtime all correlate strongly with age and department  **Figures 3-6** demonstrate the key relationships between attrition and other features in the dataset.  **Figure 3** illustrates that younger employees attrite more often than older employees.  **Figure 4** illustrates that attriting employees work overtime more than retained employees.  **Figure 5** shows that a larger proportion of attriting employees have lower stock options.  This relationship correlates with age as well; a smaller proportion of younger employees have stock options. 
   ![image](https://user-images.githubusercontent.com/30851535/185760948-c6ccb211-6e47-4974-b2b0-3bc83c45b7ef.png)
+  
 _**Figure 3:** A boxplot comparing the ages of attriting employees._
 
  ![image](https://user-images.githubusercontent.com/30851535/185761539-2c275be9-f1ce-48b6-85a1-50f5b4cf11ae.png)
+ 
 _**Figure 4:** A barplot showing the proportion of attriting employees by overtime._
 
 ![image](https://user-images.githubusercontent.com/30851535/185761577-308972b4-aaf6-4fb0-86c0-7d0cd6d9f0b5.png)
+
 _**Figure 5:** A barplot showing the proportion of attriting employees by the level of stock options._
 
 ![image](https://user-images.githubusercontent.com/30851535/185761072-8a839acd-dc14-431e-9c64-2ff82ae4d79d.png)
+
 _**Figure 6:** A radar plot comparing the mean values of relevant columns for both attrition groups._
 
  **Figure 6** brings a lot of these insights together.  The radar plots compare the means of the standardized values of all continuous columns in the data set. The values were standardized so the mean of each column is 0. The "No attrition" group accounts for ~80% of the total, therefore most columns are centered around 0. There are some key differences between the two groups that match our observations in the previous plots.
 Monthly rate, stock options, monthly income, job satisfaction, job level, Environment satisfaction, age, and total working years all significantly lower the no-attrition group.  Distance from home and Number of companies worked is higher than the no-attrition group.  Most of the people who leave are younger, unhappy with work, live further from home, and/or have left other companies before.
 
-
-
 ## Modelling
-
+After extensive cleaning and digging into the data it is time to build a model. Model building has dual purposed; 1. it is an extension of the EDA that allows an analysis to quantify the importance of certain variables. 2. The model can be used for predictive purposes; in this case a classifiaction model will take relevant features and predict whether an employee will be retained.  For this project the following workflow was used:
+1. Data were oversampled and balnaced using the SMOTE package
+2. The model was iterated to solve for the ideal subset of features
+3. The workflow was used for Logistic Regression and a Random Forest Classifier (RF).  The LR model was converted from log odds to base odds for increased interpretability.
+4. The performance of the RF was quantified.  The model was tuned using a bayesian optimizer, the perofrmance of the tuned model was then evaluated.
 
 ### Logistic Regression
-### Random Forest
+### Random Forest Classifier
 ### Discussion
 ## Recommendations and Conclusions
  
@@ -56,9 +62,6 @@ _**Figure X:** A boxplot comparing the error of a logistic regression model for 
 
 ![image](https://user-images.githubusercontent.com/30851535/185763934-2d11d002-6fb7-442d-be43-73e57b66357f.png)
 _**Figure X:** A boxplot comparing the error of a Random Forest Classification model for the best model with n_features. Models are untuned._
-
- 
-
 
 
  ![image](https://user-images.githubusercontent.com/30851535/185761742-71336b3c-d1df-4957-886c-d07b010879ef.png)
