@@ -57,19 +57,20 @@ _**Figure 7:** A barplot showing the proportion of attriting employees after ove
 
 ### Logistic Regression
 
- 
-
+ Logistic regression classification is an extension of linear methods used for binomial classification. In this case predicting "Yes" or "No" attrition.
+ The model was applied on 2-29 parameters to assess the ideal number of features **Figure 8**.
 
 ![image](https://user-images.githubusercontent.com/30851535/185763275-a9ff0a46-ae93-4f42-b8d5-19df88e07fd8.png)
 
-_**Figure X:** A boxplot comparing the error of a logistic regression model for the best model with n_features. Models are untuned._
+_**Figure 8:** A boxplot comparing the error of a logistic regression model for the best model with n_features. Models are untuned._
 
-
+**Figure 8** shows the accuracy for the best subset of k-features.  There's a quick diminishing return after 8 variables with the ideal count around 12 features.  The iideal number of features could vary depending on the needs of the business partner.  If interpretatibility is the main concer then 10-12 variables is a good optimum.  If accuracy is the armaount concern the user could introduce additional variables.  Random Forest or possibly SVM should be used in plaec of logistic regression if accuracy is the primary metric of concern.  The coefficients of logistic regression are expressed as log odds, coefficients are more interpreatble when converted to base odds (**Figure 9 **)
 
 ![image](https://user-images.githubusercontent.com/30851535/185772714-2835fcd7-49ac-46ea-97f1-863ec7fbe4b9.png)
 
-# Odds ratio, logistic regression best 11 feature model
+_**Figure 9:** An output of the best 10 feature model with base odds calculated in the final column._
 
+**Figure 9** provides an example of the principal advantage of logistic regression over other machine learning algorithms, interpreatibility.  The odds ratio can be interpreted as follows: for all else being equal a single unit increase in the feature of interest results in a change of x to the base odds.  A value <1 decreases the odds of a positive classification and a value >1 increases the odds.  For example, overtime increases the base odds of attrition by 91% and each stock option level decreases the base odds of attrition by 32%.  The top 3 features that decrease the odds of attrition are stock option level, job involvement, and age.The top 3 features that increase the odds of attrition are overtime (Yes or No), number of companies worked, and monthly rate.  Changes to company policy can be recommended from this model.  For example a reexamination of overtime policies and  eligibility for stock options.  A random forest model was built and tuned to increase the accuracy of the predictions.
 
 ### Random Forest Classifier
 
