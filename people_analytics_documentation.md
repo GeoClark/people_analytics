@@ -49,24 +49,37 @@ After extensive cleaning and digging into the data it is time to build a model. 
 3. The workflow was used for Logistic Regression and a Random Forest Classifier (RF).  The LR model was converted from log odds to base odds for increased interpretability.
 4. The performance of the RF was quantified.  The model was tuned using a bayesian optimizer, the perofrmance of the tuned model was then evaluated.
 
+The attrition dataset has nearly 1500 rows but the dataset is "unbalanced"; attriting employees represent only 15% of the total rows.  Applying SMOTE oversamples the vectors between actual "Yes Attrition" values.  The effect of the oversampling is clear in **Figure 7**.  
+
+ ![image](https://user-images.githubusercontent.com/30851535/185761742-71336b3c-d1df-4957-886c-d07b010879ef.png)
+ 
+_**Figure 7:** A barplot showing the proportion of attriting employees after oversampling with SMOTE._
+
 ### Logistic Regression
-### Random Forest Classifier
-### Discussion
-## Recommendations and Conclusions
+
  
 
 
 ![image](https://user-images.githubusercontent.com/30851535/185763275-a9ff0a46-ae93-4f42-b8d5-19df88e07fd8.png)
+
 _**Figure X:** A boxplot comparing the error of a logistic regression model for the best model with n_features. Models are untuned._
 
 
+
+![image](https://user-images.githubusercontent.com/30851535/185772714-2835fcd7-49ac-46ea-97f1-863ec7fbe4b9.png)
+
+# Odds ratio, logistic regression best 11 feature model
+
+
+### Random Forest Classifier
+
+
 ![image](https://user-images.githubusercontent.com/30851535/185763934-2d11d002-6fb7-442d-be43-73e57b66357f.png)
+
 _**Figure X:** A boxplot comparing the error of a Random Forest Classification model for the best model with n_features. Models are untuned._
 
-
- ![image](https://user-images.githubusercontent.com/30851535/185761742-71336b3c-d1df-4957-886c-d07b010879ef.png)
-_**Figure X:** A barplot showing the proportion of attriting employees after oversampling with SMOTE._
-
+### Discussion
+## Recommendations and Conclusions
 
 
 
@@ -75,6 +88,10 @@ _**Figure X:** A barplot showing the proportion of attriting employees after ove
 
 
 
-![image](https://user-images.githubusercontent.com/30851535/185761880-c545926e-bd53-452b-8c9d-be165ae737a4.png)
-# Odds ratio, logistic regression best 11 feature model
+
+
+
+
+
+
 
